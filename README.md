@@ -24,25 +24,15 @@ Generating a C\# Project in C\+\+ uses this resource (hacky but did work):
 
 ## Code Setup
 The project contains four projects
-1. **UnmanagedNativeDLL (NativeEntity)** - This project creates a native DLL. This project only has simple *sets* and *gets* for five basic types: double, int, char*, std:string, and std::vector. (This is designed as a toy example on purpose).
-2. **UnmanagedNativeTest_Application (NativeEntity_Test_Application)** - This project tests (1) - the NativeEntity C\+\+ DLL in C\+\+. The project checks the DLL works before attempting to transfer data and the DLL itself contains no (blantant) errors.
-3. **CLI_DLL_BRIDGE (CLI_Bridge)** - This project creates the CLI DLL managed wrapper (using [CLR](http://stackoverflow.com/questions/480752/clr-and-cli-what-is-the-difference)). This wrapper interacts with the unmanged NativeEntity code (1) and manages everything for C\#.
-4. **Csharp_Test_Application (C\#)** - This is the real main program to run and test (right click the project and set it as the "Startup Project"). This calls the managed CLR DLL wrapper bridge. The program creates a bunch of local variables, tests the Native DLL variables (which should be different), sets the local variables to the Native values (and test), changes the local values to a different value, and sets the remote values to the new values (and tests).
+- **UnmanagedNativeDLL (NativeEntity)** - This project creates a native DLL. This project only has simple *sets* and *gets* for five basic types: double, int, char*, std:string, and std::vector. (This is designed as a toy example on purpose).
+- **UnmanagedNativeTest_Application (NativeEntity_Test_Application)** - This project tests (1) - the NativeEntity C\+\+ DLL in C\+\+. The project checks the DLL works before attempting to transfer data and the DLL itself contains no (blantant) errors.
+- **CLI_DLL_BRIDGE (CLI_Bridge)** - This project creates the CLI DLL managed wrapper (using [CLR](http://stackoverflow.com/questions/480752/clr-and-cli-what-is-the-difference)). This wrapper interacts with the unmanged NativeEntity code (1) and manages everything for C\#.
+- **Csharp_Test_Application (C\#)** - This is the real main program to run and test (right click the project and set it as the "Startup Project"). This calls the managed CLR DLL wrapper bridge. The program creates a bunch of local variables, tests the Native DLL variables (which should be different), sets the local variables to the Native values (and test), changes the local values to a different value, and sets the remote values to the new values (and tests).
 
 *Note:* the C\# - [CMAKE](https://cmake.org/) interface is choppy at best. I had to modify the csproj.template file to get the paths I wanted, x64 bit default, and include in the greater CMAKE Visual Studio project (see the above link).
-
-
-## Code Setup
-The project contains four projects
-1. **UnmanagedNativeDLL (NativeEntity)** - This project creates a native DLL. This project only has simple *sets* and *gets* for five basic types: double, int, char*, std:string, and std::vector. (This is designed as a toy example on purpose).
-2. **UnmanagedNativeTest_Application (NativeEntity_Test_Application)** - This project tests (1) - the NativeEntity C\+\+ DLL in C\+\+. The project checks the DLL works before attempting to transfer data and the DLL itself contains no (blatant) errors.
-3. **CLI_DLL_BRIDGE (CLI_Bridge)** - This project creates the CLI DLL managed wrapper (using [CLR](http://stackoverflow.com/questions/480752/clr-and-cli-what-is-the-difference)). This wrapper interacts with the unmanaged NativeEntity code (1) and manages everything for C\#.
-4. **Csharp_Test_Application (C\#)** - This is the real main program to run and test (right click the project and set it as the "Startup Project"). This calls the managed CLR DLL wrapper bridge. The program creates a bunch of local variables, tests the Native DLL variables (which should be different), sets the local variables to the Native values (and test), changes the local values to a different value, and sets the remote values to the new values (and tests).
-
-*Note:* the C\# -CMAKE interface is choppy at best. I had to modify the csproj.template file to get the paths I wanted, x64 bit default, and include in the greater CMAKE Visual Studio project (see the above link).
 
 ## Is this the best Approach?
 No idea :) This is why I created this project. Warning up front.
 But this is why I created this example:
- 1. To provide a simple, clean, and complete example (something oddly lacking)
- 2. Solicit feedback from the greater community
+- To provide a simple, clean, and complete example (something oddly lacking)
+- Solicit feedback from the greater community
