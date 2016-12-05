@@ -1,6 +1,6 @@
 # CsharpCLICplusplusDLLExample
 
-This is a rough example how to call some legacy C\+\+ classes into a C\# project using [Common Language Infrastructure (CLI)](https://en.wikipedia.org/wiki/Common_Language_Infrastructure). This is important if you wanted to mix legacy C\+\+ (or just interested in performance) and C\#. Three quick examples : a decent GUI (and did not want to use Qt), for the Unity Game Engine, and to create some plug-ins ([Rhinoceros](https://www.rhino3d.com/)).
+This is a rough example how to call some **legacy C\+\+** classes into a **C\# project** using **[Common Language Infrastructure (CLI)](https://en.wikipedia.org/wiki/Common_Language_Infrastructure)** and build your project with **[CMAKE](https://cmake.org/)**. This is important if you wanted to mix legacy C\+\+ (or just interested in performance) and C\#. Three quick examples : a decent GUI (and did not want to use Qt), for the Unity Game Engine, and to create some plug-ins ([Rhinoceros](https://www.rhino3d.com/)). This is based on the **"[CMAKE](https://cmake.org/) way"** ... allow people to create their own projects for compilers and IDEs of choice while not touching the source files when building / compiling / creating your project.
 
 I built this example based (heavily) on the following examples:
 1. [How to Marshal a C++ Class - (Code Project)](https://www.codeproject.com/articles/18032/how-to-marshal-a-c-class?)
@@ -29,13 +29,8 @@ The project contains four projects
 3. **CLI_DLL_BRIDGE (CLI_Bridge)** - This project creates the CLI DLL managed wrapper (using [CLR](http://stackoverflow.com/questions/480752/clr-and-cli-what-is-the-difference)). This wrapper interacts with the unmanged NativeEntity code (1) and manages everything for C\#.
 4. **Csharp_Test_Application (C\#)** - This is the real main program to run and test (right click the project and set it as the "Startup Project"). This calls the managed CLR DLL wrapper bridge. The program creates a bunch of local variables, tests the Native DLL variables (which should be different), sets the local variables to the Native values (and test), changes the local values to a different value, and sets the remote values to the new values (and tests).
 
-*Note:* the C\# -CMAKE interface is choppy at best. I had to modify the csproj.template file to get the paths I wanted, x64 bit default, and include in the greater CMAKE Visual Studio project (see the above link).
+*Note:* the C\# - [CMAKE](https://cmake.org/) interface is choppy at best. I had to modify the csproj.template file to get the paths I wanted, x64 bit default, and include in the greater CMAKE Visual Studio project (see the above link).
 
-## Is this the best Approach?
-No idea :) This is why I created this project. Warning up front.
-But this is why I created this example:
- 1. To provide a simple, clean, and complete example (something oddly lacking)
- 2. Sollicite feedback from the greater community
 
 ## Code Setup
 The project contains four projects
