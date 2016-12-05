@@ -1,16 +1,5 @@
 # CsharpCLICplusplusDLLExample
 
-This is a rough example how to call some **legacy C\+\+** classes into a **C\# project** using **[Common Language Infrastructure (CLI)](https://en.wikipedia.org/wiki/Common_Language_Infrastructure)** and build your project with **[CMAKE](https://cmake.org/)**. This is important if you wanted to mix legacy C\+\+ (or just interested in performance) and C\#. Three quick examples : a decent GUI (and did not want to use Qt), for the Unity Game Engine, and to create some plug-ins ([Rhinoceros](https://www.rhino3d.com/)). This is based on the **"[CMAKE](https://cmake.org/) way"** ... allow people to create their own projects for compilers and IDEs of choice while not touching the source files when building / compiling / creating your project.
-
-I built this example based (heavily) on the following examples:
-1. [How to Marshal a C++ Class - (Code Project)](https://www.codeproject.com/articles/18032/how-to-marshal-a-c-class?)
-2. [Passing a vector/array from unmanaged C++ to C#](http://stackoverflow.com/questions/31417688/passing-a-vector-array-from-unmanaged-c-to-c-sharp)
-
-Generating a C\# Project in C\+\+ uses this resource (hacky but did work):
-[Generate C# project using CMake](http://stackoverflow.com/questions/2074144/generate-c-sharp-project-using-cmake) ... because this is a great example why you just want to include or create a C\# project inside another project (Since the DLLs are not platform independent).
-
-*This is rough draft* : comments welcomed and encouraged!
-
 This is a rough example how to call some legacy C\+\+ classes into a C\# project using [Common Language Infrastructure (CLI)](https://en.wikipedia.org/wiki/Common_Language_Infrastructure). This is important if you wanted to mix legacy C\+\+ (or just intrested in performance) and C\#. Three quick examples : a decent GUI (and did not want to use Qt), for the Unity Game Engine, and to create some plug-ins ([Rhinoceros](https://www.rhino3d.com/)).
 
 I built this example based (heavily) on the following examples:
